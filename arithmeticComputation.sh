@@ -5,6 +5,7 @@ declare -A computeDictionary
 read -p "Enter a value: " a
 read -p "Enter b value: " b
 read -p "Enter c value: " c
+counter=0
 
 echo "a= $a"
 echo "b= $b"
@@ -26,8 +27,14 @@ temp4=$(($a%$b))
 compute4=$(($temp4+$c))
 echo "answer: $compute4"
 
-computeDictionary[eq1]=[$compute1]
-computeDictionary[eq2]=[$compute2]
-computeDictionary[eq3]=[$compute3]
-computeDictionary[eq4]=[$compute4]
-echo "${computeDictionary[*]}"
+#computeDictionary[eq1]=[$compute1]
+#computeDictionary[eq2]=[$compute2]
+#computeDictionary[eq3]=[$compute3]
+#computeDictionary[eq4]=[$compute4]
+#echo "${computeDictionary[*]}"
+
+Array[((counter++))]=$compute1
+Array[((counter++))]=$compute2
+Array[((counter++))]=$compute3
+Array[((counter++))]=$compute4
+echo "${Array[*]}"
