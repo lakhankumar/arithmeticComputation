@@ -48,4 +48,4 @@ do
 	done
 
 
-echo "Desending order of an array: ${Array[*]}"
+echo "ascending order of an array: ${Array[*]}"
