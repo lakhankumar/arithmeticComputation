@@ -8,6 +8,6 @@ echo "a= $a"
 echo "b= $b"
 echo "c= $c"
 
-temp=$(($a*$b))
-answer=$(($temp+$c))
+temp=$(($c+$a))
+answer=$(($temp/$b))
 echo "answer: $answer"
