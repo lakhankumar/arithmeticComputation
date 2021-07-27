@@ -38,7 +38,7 @@ for ((i=0;i<4;i++))
 do
 	for ((j=i+1;j<4;j++))
 	do
-		if [ ${Array[j]} -gt ${Array[i]} ]
+		if [ ${Array[j]} -lt ${Array[i]} ]
 		then
 			temp=$[${Array[i]}]
 			Array[i]=$[${Array[j]}]
