@@ -27,14 +27,25 @@ temp4=$(($a%$b))
 compute4=$(($temp4+$c))
 echo "answer: $compute4"
 
-#computeDictionary[eq1]=[$compute1]
-#computeDictionary[eq2]=[$compute2]
-#computeDictionary[eq3]=[$compute3]
-#computeDictionary[eq4]=[$compute4]
-#echo "${computeDictionary[*]}"
-
 Array[((counter++))]=$compute1
 Array[((counter++))]=$compute2
 Array[((counter++))]=$compute3
 Array[((counter++))]=$compute4
 echo "${Array[*]}"
+
+
+for ((i=0;i<4;i++))
+do
+	for ((j=i+1;j<4;j++))
+	do
+		if [ ${Array[j]} -gt ${Array[i]} ]
+		then
+			temp=$[${Array[i]}]
+			Array[i]=$[${Array[j]}]
+			Array[j]=$[$temp]
+		fi
+		done
+	done
+
+
+echo "Desending order of an array: ${Array[*]}"
